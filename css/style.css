@@ -181,9 +181,14 @@
     border-radius: 1px;
 }
 
-#professionFilter,
-#industryFilter {
-    height: 100%;
+.subcat_content {
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height .5s ease;
+}
+
+.subcat_content.collapsed {
+    max-height: 0;
 }
 
 /* ------- output  of search --------- */
