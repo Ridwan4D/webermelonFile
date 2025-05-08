@@ -196,7 +196,7 @@
     width: 74%;
 }
 
-.member_custome_grid {
+.member_custom_grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -352,7 +352,7 @@
         width: 59%;
     }
 
-    .member_custome_grid {
+    .member_custom_grid {
         display: grid;
         grid-template-columns: 1fr !important;
         gap: 12px;

@@ -43,20 +43,28 @@
                         <p class="filter_title fw-medium">Member Type</p>
                         <form action="" id="memberTypeForm">
                             <div class="d-flex align-items-center mb-1">
-                                <input type="radio" name="memberType" id="allMember" class="radio_btn">
-                                <label for="allMember" class="filter_text fw-normal">All Member</label>
+                                <input type="radio" name="memberType" id="allMember" class="radio_btn" value="all">
+                                <label for="allMember" class="filter_text fw-normal">All Members</label>
                             </div>
                             <div class="d-flex align-items-center mb-1">
-                                <input type="radio" name="memberType" id="vip" class="radio_btn">
+                                <input type="radio" name="memberType" id="vip" class="radio_btn" value="4">
                                 <label for="vip" class="filter_text fw-normal">VIP</label>
                             </div>
                             <div class="d-flex align-items-center mb-1">
-                                <input type="radio" name="memberType" id="platinum" class="radio_btn">
+                                <input type="radio" name="memberType" id="platinum" class="radio_btn" value="1">
                                 <label for="platinum" class="filter_text fw-normal">Platinum</label>
                             </div>
                             <div class="d-flex align-items-center mb-1">
-                                <input type="radio" name="memberType" id="sliver" class="radio_btn">
-                                <label for="sliver" class="filter_text fw-normal">Silver</label>
+                                <input type="radio" name="memberType" id="gold" class="radio_btn" value="2">
+                                <label for="gold" class="filter_text fw-normal">Gold</label>
+                            </div>
+                            <div class="d-flex align-items-center mb-1">
+                                <input type="radio" name="memberType" id="silver" class="radio_btn" value="3">
+                                <label for="silver" class="filter_text fw-normal">Silver</label>
+                            </div>
+                            <div class="d-flex align-items-center mb-1">
+                                <input type="radio" name="memberType" id="free" class="radio_btn" value="0">
+                                <label for="free" class="filter_text fw-normal">Free Member</label>
                             </div>
                         </form>
                     </div>
@@ -74,8 +82,8 @@
                                 <div class="subcat_content" id="professionFilter">
                                     <form action="" id="professionForm">
                                         <div class="d-flex align-items-center mb-1 gap-2">
-                                            <input type="checkbox" name="memberType" id="silver" class="check_btn">
-                                            <label for="silver" class="filter_text fw-normal">Silver</label>
+                                            <input type="checkbox" name="memberType" id="speaker" class="check_btn">
+                                            <label for="speaker" class="filter_text fw-normal">Speaker</label>
                                         </div>
                                         <div class="d-flex align-items-center mb-1 gap-2">
                                             <input type="checkbox" name="memberType" id="author" class="check_btn">
@@ -128,8 +136,7 @@
                                         <div class="d-flex align-items-center mb-1 gap-2">
                                             <input type="checkbox" name="memberType" id="contentCreator"
                                                 class="check_btn">
-                                            <label for="contentCreator" class="filter_text fw-normal">Content
-                                                Creator</label>
+                                            <label for="contentCreator" class="filter_text fw-normal">Content Creator</label>
                                         </div>
                                         <div class="d-flex align-items-center mb-1 gap-2">
                                             <input type="checkbox" name="memberType" id="tech" class="check_btn">
@@ -152,7 +159,7 @@
                 </div>
                 <!-- preview search result  -->
                 <div class="user_card_side">
-                    <div class="member_custome_grid">
+                    <div class="member_custom_grid">
                         <!-- user card -->
                         <!-- <div class="user_card">
                             <div class="card_top d-flex">

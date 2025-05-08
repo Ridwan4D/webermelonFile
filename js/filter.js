@@ -1,9 +1,17 @@
 let allUser = [];
-let selectedType = 0;
-let selectedProfession = "all";
-let selectedIndustry = "all";
-const memberGrid = document.querySelector(".member_custome_grid");
+let selectedType = "all";
+let selectedProfessions = [];
+let selectedIndustries = [];
+
+const memberGrid = document.querySelector(".member_custom_grid");
 const searchInput = document.getElementById("search_input");
+const memberTypeForm = document.getElementById("memberTypeForm");
+const professionCheckboxes = document.querySelectorAll(
+  '#professionForm input[type="checkbox"]'
+);
+const industryCheckboxes = document.querySelectorAll(
+  '#industryForm input[type="checkbox"]'
+);
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch("https://ridwan4d.github.io/ezway_api/ezway_api.json")
@@ -39,61 +47,101 @@ function renderUsers(users) {
       .map((role) => role.charAt(0).toUpperCase() + role.slice(1))
       .join(" | ");
 
-    memberGrid.innerHTML += `
-        <div class="user_card">
-          <div class="card_top d-flex">
-            <div class="ct_left">
-              <div>
-                <img src="${user.image}" alt="user" class="user_img">
-              </div>
-              <div>
-                <p class="user_name m-0">
-                  ${user.first_name} ${user.last_name}
-                </p>
-                <p class="user_email m-0">${user.email}</p>
-              </div>
-            </div>
-            <div class="ct_right">
-              <div class="card_badge d-flex align-items-center gap-1">
-                <img src="./image/streamline_star-badge.svg" alt="badge">
-                <p class="badge_text m-0">${badgeLabel}</p>
-              </div>
+    memberGrid.innerHTML += `  
+      <div class="user_card">
+        <div class="card_top d-flex">
+          <div class="ct_left">
+            <div><img src="${user.image}" alt="user" class="user_img"></div>
+            <div>
+              <p class="user_name m-0">${user.first_name} ${user.last_name}</p>
+              <p class="user_email m-0">${user.email}</p>
             </div>
           </div>
-          <div class="card_bottom">
-            <div class="cb_user_role mt-1">
-              <p class="m-0 status_role">${
-                formattedRoles || "No profession listed"
-              }</p>
-            </div>
-            <div class="user_info_box d-flex align-items-center justify-content-between">
-              <div class="user_follower">
-                <p class="infoText fw-medium m-0">Followers</p>
-                <p class="info_value fw-semibold m-0">${
-                  user.followers || "N/A"
-                }</p>
-              </div>
-              <div class="user_phone">
-                <p class="infoText fw-medium m-0">Phone</p>
-                <p class="info_value fw-semibold m-0">
-                ${user.phone_number || "N/A"}
-                </p>
-              </div>
-            </div>
-            <div class="card_button_box d-flex justify-content-between align-items-center">
-              <button class="view_profile_btn common_btn_style">View Profile</button>
-              <button class="connect_btn common_btn_style">Connect</button>
+          <div class="ct_right">
+            <div class="card_badge d-flex align-items-center gap-1">
+              <img src="./image/streamline_star-badge.svg" alt="badge">
+              <p class="badge_text m-0">${badgeLabel}</p>
             </div>
           </div>
         </div>
-      `;
+        <div class="card_bottom">
+          <div class="cb_user_role mt-1">
+            <p class="m-0 status_role">${
+              formattedRoles || "No profession listed"
+            }</p>
+          </div>
+          <div class="user_info_box d-flex align-items-center justify-content-between">
+            <div class="user_follower">
+              <p class="infoText fw-medium m-0">Followers</p>
+              <p class="info_value fw-semibold m-0">${
+                user.followers || "N/A"
+              }</p>
+            </div>
+            <div class="user_phone">
+              <p class="infoText fw-medium m-0">Phone</p>
+              <p class="info_value fw-semibold m-0">${
+                user.phone_number || "N/A"
+              }</p>
+            </div>
+          </div>
+          <div class="card_button_box d-flex justify-content-between align-items-center">
+            <button class="view_profile_btn common_btn_style">View Profile</button>
+            <button class="connect_btn common_btn_style">Connect</button>
+          </div>
+        </div>
+      </div>
+    `;
   });
+}
+
+function applyFilters() {
+  let filtered = allUser;
+
+  // Normalize selected profession and industry values by replacing spaces with "-" (or "_" as needed)
+  const normalizedSelectedProfessions = selectedProfessions.map((profession) =>
+    profession.replace(/\s+/g, "-").toLowerCase()
+  );
+
+  const normalizedSelectedIndustries = selectedIndustries.map((industry) =>
+    industry.replace(/\s+/g, "-").toLowerCase()
+  );
+
+  if (selectedType !== "all") {
+    filtered = filtered.filter((user) => user.badge == selectedType);
+  }
+
+  // Filter based on selected professions
+  if (normalizedSelectedProfessions.length > 0) {
+    filtered = filtered.filter((user) => {
+      const roles = user.member_type.toLowerCase().split(",");
+      return normalizedSelectedProfessions.some((p) =>
+        roles.some((role) =>
+          role.replace(/\s+/g, "-").toLowerCase().includes(p)
+        )
+      );
+    });
+  }
+
+  // Filter based on selected industries
+  if (normalizedSelectedIndustries.length > 0) {
+    filtered = filtered.filter((user) => {
+      const userIndustry = user.member_type.toLowerCase().split(",");
+      return normalizedSelectedIndustries.some((industry) =>
+        userIndustry.some((role) =>
+          role.replace(/\s+/g, "-").toLowerCase().includes(industry)
+        )
+      );
+    });
+  }
+
+  // Finally, render the filtered users
+  renderUsers(filtered);
 }
 
 searchInput.addEventListener("input", () => {
   const query = searchInput.value.toLowerCase();
 
-  const filteredUsers = allUser.filter((user) => {
+  const searchResults = allUser.filter((user) => {
     return (
       user.first_name.toLowerCase().includes(query) ||
       user.last_name.toLowerCase().includes(query) ||
@@ -102,5 +150,30 @@ searchInput.addEventListener("input", () => {
     );
   });
 
-  renderUsers(filteredUsers);
+  renderUsers(searchResults);
+});
+
+memberTypeForm.addEventListener("change", () => {
+  selectedType = memberTypeForm.memberType.value;
+  applyFilters();
+});
+
+professionCheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    selectedProfessions = Array.from(professionCheckboxes)
+      .filter((cb) => cb.checked)
+      .map((cb) => cb.id.toLowerCase());
+    console.log("Selected Professions:", selectedProfessions); // Debugging line
+    applyFilters();
+  });
+});
+
+industryCheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    selectedIndustries = Array.from(industryCheckboxes)
+      .filter((cb) => cb.checked)
+      .map((cb) => cb.id.toLowerCase());
+    console.log("Selected Industries:", selectedIndustries); // Debugging line
+    applyFilters();
+  });
 });
