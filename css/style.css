@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* common style start */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+}
+
+.page_bg_color {
+    padding-top: 48px;
+    padding-bottom: 95px;
+    background-color: #ECF0F4;
+}
+
+.member_container {
+    max-width: 948px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding: 10px; */
+}
+
+/* common style end */
+
+/* ============ header section section start ============ */
+.mh_title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #101828;
+    margin-top: 10px;
+}
+
+.mh_desc {
+    color: #364153;
+    line-height: 24px;
+}
+
+/* ---------- search box ------------- */
+.search_box {
+    width: 100%;
+    background: #FFFFFF;
+    padding: 10px 24px;
+    border-radius: 8px;
+}
+
+#search_input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+#search_input::placeholder {
+    color: #99A1AF;
+}
+
+/* ============ header section section end ============ */
+
+/* ============ content section start ============ */
+#member_content_section {
+    margin-top: 20px;
+}
+
+.content_container {
+    display: flex;
+    gap: 20px;
+}
+
+
+.filter_side {
+    width: 24.5%;
+    height: 100%;
+    background: white;
+    border-radius: 8px;
+    padding: 24px 24px 70px;
+}
+
+.filter_top_title {
+    font-size: 12px;
+    color: #171717;
+    line-height: 18px;
+    letter-spacing: 0;
+    border-bottom: 1px solid #E4E4E7;
+}
+
+.member_type {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E4E4E7;
+}
+
+.filter_title {
+    line-height: 18px;
+    color: #171717;
+}
+
+.filter_text {
+    font-size: 14px;
+    line-height: 18px;
+    color: #404040;
+}
+
+.radio_btn {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    margin-right: 8px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.radio_btn:checked::after {
+    content: '';
+    position: absolute;
+    top: 12%;
+    left: 12%;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #333;
+}
+
+.radio_btn:active {
+    background: #000;
+}
+
+.category_title,
+.subcategory_top {
+    margin: 20px 0;
+}
+
+.subcateogry_title,
+.user_name {
+    font-size: 14px;
+    line-height: 18px;
+    color: #171717;
+}
+
+#professionToggleBtn,
+#industryToggleBtn {
+    border: none;
+    background: transparent;
+}
+
+.check_btn {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.check_btn:active {
+    background: #000;
+}
+
+.check_btn:checked {
+    background-color: #fff;
+}
+
+.check_btn:checked::after {
+    content: " ";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    height: 8px;
+    width: 8px;
+    background-color: #333;
+    border-radius: 1px;
+}
+
+#professionFilter,
+#industryFilter {
+    height: 100%;
+}
+
+/* ------- output  of search --------- */
+.user_card_side {
+    width: 74%;
+}
+
+.member_custome_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+
+.user_card {
+    background: white;
+    border-radius: 8px;
+}
+
+.card_top {
+    gap: 30px;
+    padding: 16px 20px 8px;
+    border-bottom: 1px solid #EEF2F6;
+}
+
+.ct_left {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.user_img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.user_name {
+    line-height: 21px;
+}
+
+.user_email,
+.status_role,
+.infoText,
+.info_value {
+    font-size: 10px;
+    line-height: 15px;
+    color: #6A7282;
+}
+
+.card_badge {
+    padding: 2px 5.5px;
+    border-radius: 8px;
+    background: #FCEFD6;
+}
+
+.badge_text {
+    font-size: 8px;
+    line-height: 12px;
+    font-weight: 500;
+    color: #966530;
+}
+
+/* card bottom part */
+.card_bottom {
+    padding: 8px 20px 16px;
+}
+
+.user_info_box {
+    max-width: 249px;
+    margin-top: 12px;
+}
+
+.status_role {
+    color: #364153;
+}
+
+.info_value {
+    color: #171717;
+}
+
+.card_button_box {
+    margin-top: 12px;
+}
+
+.common_btn_style {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 4px 39px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    transition: all .5s ease;
+}
+
+.common_btn_style:hover {
+    transform: scale(1.05);
+}
+
+.view_profile_btn {
+    color: white;
+    background: #FF8A00;
+}
+
+.connect_btn {
+    background: #EEF2F6;
+}
+
+/* ============ content section end ============ */
+
+
+
+
+
+/* ============ media query start ============ */
+
+@media(max-width: 991px) {
+    .member_container {
+        padding: 10px;
+    }
+
+    .filter_side {
+        /* width: 26%; */
+        padding: 16px 16px 50px;
+    }
+}
+
+@media (min-width:768px) and (max-width: 991px) {
+    /* card design */
+
+    .user_info_box {
+        max-width: 200px;
+    }
+
+    .card_top {
+        gap: 10px;
+    }
+
+    .ct_left {
+        display: flex;
+        gap: 6px;
+        align-items: start !important;
+        flex-direction: column;
+    }
+
+    .card_button_box {
+        margin-top: 12px;
+        flex-direction: column-reverse;
+        align-items: start !important;
+        gap: 12px;
+    }
+}
+
+
+@media(max-width: 767px) {
+    .filter_side {
+        width: 40%;
+    }
+
+    .user_card_side {
+        width: 59%;
+    }
+
+    .member_custome_grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+
+}
+
+@media(max-width: 600px) {
+    .content_container {
+        flex-direction: column;
+    }
+
+    .filter_side {
+        width: 100%;
+    }
+
+    .user_card_side {
+        width: 100%;
+    }
+
+    .card_top {
+        gap: 10px;
+        padding: 16px 9px 8px;
+    }
+
+    .card_bottom {
+        padding: 8px 9px 16px;
+    }
+
+    .common_btn_style {
+        padding: 4px 25px;
+    }
+}

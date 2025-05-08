@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezway Member</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="page_bg_color">
+        <!-- member header section start here  -->
+        <section id="member_head_section">
+            <div class="member_container">
+                <div class="mh_title_box">
+                    <h3 class="mh_title">Members Directory</h3>
+                    <p class="m-0 mh_desc">View and Connect with our community member</p>
+                </div>
+                <!-- search form start -->
+                <form class="">
+                    <div class="search_box d-flex align-items-center mt-4">
+                        <label for="search_input">
+                            <img src="./image/search.svg" alt="magnifying" class="magnifying_icon me-2">
+                        </label>
+                        <input type="text" id="search_input" class="ms-1"
+                            placeholder="Search by name, email or Phone number">
+                    </div>
+                </form>
+                <!-- search form end -->
+            </div>
+        </section>
+        <!-- member header section ends here  -->
+
+        <!-- member content section start here  -->
+        <section id="member_content_section">
+            <div class="member_container content_container">
+                <div class="filter_side">
+                    <p class="filter_top_title fw-semibold m-0 pb-1">Filter</p>
+                    <!-- member type start -->
+                    <div class="member_type">
+                        <p class="filter_title fw-medium">Member Type</p>
+                        <form action="" id="memberTypeForm">
+                            <div class="d-flex align-items-center mb-1">
+                                <input type="radio" name="memberType" id="allMember" class="radio_btn">
+                                <label for="allMember" class="filter_text fw-normal">All Member</label>
+                            </div>
+                            <div class="d-flex align-items-center mb-1">
+                                <input type="radio" name="memberType" id="vip" class="radio_btn">
+                                <label for="vip" class="filter_text fw-normal">VIP</label>
+                            </div>
+                            <div class="d-flex align-items-center mb-1">
+                                <input type="radio" name="memberType" id="platinum" class="radio_btn">
+                                <label for="platinum" class="filter_text fw-normal">Platinum</label>
+                            </div>
+                            <div class="d-flex align-items-center mb-1">
+                                <input type="radio" name="memberType" id="sliver" class="radio_btn">
+                                <label for="sliver" class="filter_text fw-normal">Silver</label>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- categories start -->
+                    <div>
+                        <p class="filter_title fw-medium category_title">Categories</p>
+                        <!-- subcategories start -->
+                        <div class="subcategory_container">
+                            <div class="profession_container">
+                                <div class="subcategory_top d-flex justify-content-between align-items-center">
+                                    <p class="subcateogry_title fw-medium mb-0">Profession</p>
+                                    <button id="professionToggleBtn"><img src="./image/minus.svg" alt="minus"></button>
+                                </div>
+                                <div class="subcat_content" id="professionFilter">
+                                    <form action="" id="professionForm">
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="silver" class="check_btn">
+                                            <label for="silver" class="filter_text fw-normal">Silver</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="author" class="check_btn">
+                                            <label for="author" class="filter_text fw-normal">Author</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="producer" class="check_btn">
+                                            <label for="producer" class="filter_text fw-normal">Producer</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="filmmaker" class="check_btn">
+                                            <label for="filmmaker" class="filter_text fw-normal">Filmmaker</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="podcaster" class="check_btn">
+                                            <label for="podcaster" class="filter_text fw-normal">Podcaster</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="dancer" class="check_btn">
+                                            <label for="dancer" class="filter_text fw-normal">Dancer</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="entrepreneur"
+                                                class="check_btn">
+                                            <label for="entrepreneur" class="filter_text fw-normal">Entrepreneur</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="industry_container">
+                                <div class="subcategory_top d-flex justify-content-between align-items-center">
+                                    <p class="subcateogry_title fw-medium mb-0">Industry</p>
+                                    <button id="industryToggleBtn"><img src="./image/minus.svg" alt="minus"></button>
+                                </div>
+                                <div class="subcat_content" id="industryFilter">
+                                    <form action="" id="industryForm">
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="media" class="check_btn">
+                                            <label for="media" class="filter_text fw-normal">Media</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="marketing" class="check_btn">
+                                            <label for="marketing" class="filter_text fw-normal">Marketing</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="promition" class="check_btn">
+                                            <label for="promition" class="filter_text fw-normal">Promition</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="contentCreator"
+                                                class="check_btn">
+                                            <label for="contentCreator" class="filter_text fw-normal">Content
+                                                Creator</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="tech" class="check_btn">
+                                            <label for="tech" class="filter_text fw-normal">Tech</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="entertaiment"
+                                                class="check_btn">
+                                            <label for="entertaiment" class="filter_text fw-normal">Entertaiment</label>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-1 gap-2">
+                                            <input type="checkbox" name="memberType" id="music" class="check_btn">
+                                            <label for="music" class="filter_text fw-normal">Music </label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- preview search result  -->
+                <div class="user_card_side">
+                    <div class="member_custome_grid">
+                        <!-- user card -->
+                        <div class="user_card">
+                            <div class="card_top d-flex">
+                                <div class="ct_left">
+                                    <div>
+                                        <img src="image/user_img.jpg" alt="usre" class="user_img">
+                                    </div>
+                                    <div>
+                                        <p class="user_name m-0" id="userName">Tanjil Ahmed</p>
+                                        <p class="user_email m-0" id="userEmail">tanjilahmed@webermelon.com</p>
+                                    </div>
+                                </div>
+                                <div class="ct_right">
+                                    <div class="card_badge d-flex align-items-center gap-1">
+                                        <img src="./image/streamline_star-badge.svg" alt="badge">
+                                        <p class="badge_text m-0" id="userType">Platinum</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_bottom">
+                                <div class="cb_user_role mt-1">
+                                    <p class="m-0 status_role" id="userRole">Celebrity | Speaker | Author</p>
+                                </div>
+                                <div class="user_info_box d-flex align-items-center justify-content-between">
+                                    <div class="user_follower">
+                                        <p class="infoText fw-medium m-0">Followers</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">5.5M</p>
+                                    </div>
+
+                                    <div class="user_phone">
+                                        <p class="infoText fw-medium m-0">Phone</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">012345678900</p>
+                                    </div>
+                                </div>
+                                <div class="card_button_box d-flex justify-content-between align-items-center">
+                                    <button class="view_profile_btn common_btn_style">
+                                        View Profile
+                                    </button>
+                                    <button class="connect_btn common_btn_style">
+                                        Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- user card -->
+                        <div class="user_card">
+                            <div class="card_top d-flex">
+                                <div class="ct_left">
+                                    <div>
+                                        <img src="image/user_img.jpg" alt="usre" class="user_img">
+                                    </div>
+                                    <div>
+                                        <p class="user_name m-0">Tanjil Ahmed</p>
+                                        <p class="user_email m-0">tanjilahmed@webermelon.com</p>
+                                    </div>
+                                </div>
+                                <div class="ct_right">
+                                    <div class="card_badge d-flex align-items-center gap-1">
+                                        <img src="./image/streamline_star-badge.svg" alt="badge">
+                                        <p class="badge_text m-0">Platinum</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_bottom">
+                                <div class="cb_user_role mt-1">
+                                    <p class="m-0 status_role">Celebrity | Speaker | Author</p>
+                                </div>
+                                <div class="user_info_box d-flex align-items-center justify-content-between">
+                                    <div class="user_follower">
+                                        <p class="infoText fw-medium m-0">Followers</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">5.5M</p>
+                                    </div>
+
+                                    <div class="user_phone">
+                                        <p class="infoText fw-medium m-0">Phone</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">012345678900</p>
+                                    </div>
+                                </div>
+                                <div class="card_button_box d-flex justify-content-between align-items-center">
+                                    <button class="view_profile_btn common_btn_style">
+                                        View Profile
+                                    </button>
+                                    <button class="connect_btn common_btn_style">
+                                        Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- user card -->
+                        <div class="user_card">
+                            <div class="card_top d-flex">
+                                <div class="ct_left">
+                                    <div>
+                                        <img src="image/user_img.jpg" alt="usre" class="user_img">
+                                    </div>
+                                    <div>
+                                        <p class="user_name m-0">Tanjil Ahmed</p>
+                                        <p class="user_email m-0">tanjilahmed@webermelon.com</p>
+                                    </div>
+                                </div>
+                                <div class="ct_right">
+                                    <div class="card_badge d-flex align-items-center gap-1">
+                                        <img src="./image/streamline_star-badge.svg" alt="badge">
+                                        <p class="badge_text m-0">Platinum</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_bottom">
+                                <div class="cb_user_role mt-1">
+                                    <p class="m-0 status_role">Celebrity | Speaker | Author</p>
+                                </div>
+                                <div class="user_info_box d-flex align-items-center justify-content-between">
+                                    <div class="user_follower">
+                                        <p class="infoText fw-medium m-0">Followers</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">5.5M</p>
+                                    </div>
+
+                                    <div class="user_phone">
+                                        <p class="infoText fw-medium m-0">Phone</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">012345678900</p>
+                                    </div>
+                                </div>
+                                <div class="card_button_box d-flex justify-content-between align-items-center">
+                                    <button class="view_profile_btn common_btn_style">
+                                        View Profile
+                                    </button>
+                                    <button class="connect_btn common_btn_style">
+                                        Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- user card -->
+                        <div class="user_card">
+                            <div class="card_top d-flex">
+                                <div class="ct_left">
+                                    <div>
+                                        <img src="image/user_img.jpg" alt="usre" class="user_img">
+                                    </div>
+                                    <div>
+                                        <p class="user_name m-0">Tanjil Ahmed</p>
+                                        <p class="user_email m-0">tanjilahmed@webermelon.com</p>
+                                    </div>
+                                </div>
+                                <div class="ct_right">
+                                    <div class="card_badge d-flex align-items-center gap-1">
+                                        <img src="./image/streamline_star-badge.svg" alt="badge">
+                                        <p class="badge_text m-0">Platinum</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_bottom">
+                                <div class="cb_user_role mt-1">
+                                    <p class="m-0 status_role">Celebrity | Speaker | Author</p>
+                                </div>
+                                <div class="user_info_box d-flex align-items-center justify-content-between">
+                                    <div class="user_follower">
+                                        <p class="infoText fw-medium m-0">Followers</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">5.5M</p>
+                                    </div>
+
+                                    <div class="user_phone">
+                                        <p class="infoText fw-medium m-0">Phone</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">012345678900</p>
+                                    </div>
+                                </div>
+                                <div class="card_button_box d-flex justify-content-between align-items-center">
+                                    <button class="view_profile_btn common_btn_style">
+                                        View Profile
+                                    </button>
+                                    <button class="connect_btn common_btn_style">
+                                        Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- user card -->
+                        <div class="user_card">
+                            <div class="card_top d-flex">
+                                <div class="ct_left">
+                                    <div>
+                                        <img src="image/user_img.jpg" alt="usre" class="user_img">
+                                    </div>
+                                    <div>
+                                        <p class="user_name m-0">Tanjil Ahmed</p>
+                                        <p class="user_email m-0">tanjilahmed@webermelon.com</p>
+                                    </div>
+                                </div>
+                                <div class="ct_right">
+                                    <div class="card_badge d-flex align-items-center gap-1">
+                                        <img src="./image/streamline_star-badge.svg" alt="badge">
+                                        <p class="badge_text m-0">Platinum</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_bottom">
+                                <div class="cb_user_role mt-1">
+                                    <p class="m-0 status_role">Celebrity | Speaker | Author</p>
+                                </div>
+                                <div class="user_info_box d-flex align-items-center justify-content-between">
+                                    <div class="user_follower">
+                                        <p class="infoText fw-medium m-0">Followers</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">5.5M</p>
+                                    </div>
+
+                                    <div class="user_phone">
+                                        <p class="infoText fw-medium m-0">Phone</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">012345678900</p>
+                                    </div>
+                                </div>
+                                <div class="card_button_box d-flex justify-content-between align-items-center">
+                                    <button class="view_profile_btn common_btn_style">
+                                        View Profile
+                                    </button>
+                                    <button class="connect_btn common_btn_style">
+                                        Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- user card -->
+                        <div class="user_card">
+                            <div class="card_top d-flex">
+                                <div class="ct_left">
+                                    <div>
+                                        <img src="image/user_img.jpg" alt="usre" class="user_img">
+                                    </div>
+                                    <div>
+                                        <p class="user_name m-0">Tanjil Ahmed</p>
+                                        <p class="user_email m-0">tanjilahmed@webermelon.com</p>
+                                    </div>
+                                </div>
+                                <div class="ct_right">
+                                    <div class="card_badge d-flex align-items-center gap-1">
+                                        <img src="./image/streamline_star-badge.svg" alt="badge">
+                                        <p class="badge_text m-0">Platinum</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_bottom">
+                                <div class="cb_user_role mt-1">
+                                    <p class="m-0 status_role">Celebrity | Speaker | Author</p>
+                                </div>
+                                <div class="user_info_box d-flex align-items-center justify-content-between">
+                                    <div class="user_follower">
+                                        <p class="infoText fw-medium m-0">Followers</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">5.5M</p>
+                                    </div>
+
+                                    <div class="user_phone">
+                                        <p class="infoText fw-medium m-0">Phone</p>
+                                        <p id="followerValue" class="info_value fw-semibold m-0">012345678900</p>
+                                    </div>
+                                </div>
+                                <div class="card_button_box d-flex justify-content-between align-items-center">
+                                    <button class="view_profile_btn common_btn_style">
+                                        View Profile
+                                    </button>
+                                    <button class="connect_btn common_btn_style">
+                                        Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- member content section ends here  -->
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
