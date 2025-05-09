@@ -299,6 +299,82 @@
 
 /* ============ content section end ============ */
 
+/* ============ pagination section start ============ */
+/* Pagination Styles */
+.pagination_container {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+}
+
+.pagination_info {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+}
+
+.pagination_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.pagination_prev,
+.pagination_next {
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.pagination_numbers {
+    display: flex;
+    margin: 0 10px;
+}
+
+.pagination_number {
+    height: 36px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    font-weight: 500;
+}
+
+.pagination_active {
+    background-color: #FF8C00;
+    color: white;
+    border-color: #FF8C00;
+}
+
+.pagination_text {
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+.pagination_icon {
+    font-size: 12px;
+}
+
+.pagination_link:hover:not(.pagination_active) {
+    background-color: #f5f5f5;
+}
+
+.pagination_active:hover {
+    cursor: default;
+}
+
+/* ============ pagination section end ============ */
 
 
 
@@ -313,6 +389,12 @@
     .filter_side {
         /* width: 26%; */
         padding: 16px 16px 50px;
+    }
+
+    .pagination_parent {
+        flex-direction: column;
+        align-items: start !important;
+        gap: 10px;
     }
 }
 
@@ -343,7 +425,7 @@
 }
 
 
-@media(max-width: 767px) {
+@media(max-width: 768px) {
     .filter_side {
         width: 40%;
     }
@@ -353,11 +435,9 @@
     }
 
     .member_custom_grid {
-        display: grid;
         grid-template-columns: 1fr !important;
         gap: 12px;
     }
-
 }
 
 @media(max-width: 600px) {
