@@ -465,4 +465,19 @@
     .common_btn_style {
         padding: 4px 25px;
     }
+
+    .pagination_prev,
+    .pagination_next {
+        padding: 2px 4px;
+    }
+
+    .pagination_text {
+        font-size: 10px;
+    }
+
+    .pagination_number {
+        height: 20px;
+        width: 18px;
+        font-size: 10px;
+    }
 }
