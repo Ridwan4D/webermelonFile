@@ -83,22 +83,19 @@ function renderUsers(users) {
         </div>
         <div class="card_bottom">
           <div class="cb_user_role mt-1">
-            <p class="m-0 status_role">${
-              formattedRoles || "No profession listed"
-            }</p>
+            <p class="m-0 status_role">${formattedRoles || "No profession listed"
+      }</p>
           </div>
           <div class="user_info_box d-flex align-items-center justify-content-between">
             <div class="user_follower">
               <p class="infoText fw-medium m-0">Followers</p>
-              <p class="info_value fw-semibold m-0">${
-                user.followers || "N/A"
-              }</p>
+              <p class="info_value fw-semibold m-0">${user.followers || "N/A"
+      }</p>
             </div>
             <div class="user_phone">
               <p class="infoText fw-medium m-0">Phone</p>
-              <p class="info_value fw-semibold m-0">${
-                user.phone_number || "N/A"
-              }</p>
+              <p class="info_value fw-semibold m-0">${user.phone_number || "N/A"
+      }</p>
             </div>
           </div>
           <div class="card_button_box d-flex justify-content-between align-items-center">
@@ -127,38 +124,25 @@ function setupPagination() {
 }
 
 function renderPagination(totalPages) {
-  // Get pagination container elements
   const paginationNumbers = document.querySelector(".pagination_numbers");
   const prevButton = document.querySelector(".pagination_prev");
   const nextButton = document.querySelector(".pagination_next");
 
-  // Clear existing page numbers
   paginationNumbers.innerHTML = "";
 
   if (totalPages <= 1) {
-    // Hide pagination if only one page
     paginationContainer.style.display = "none";
     return;
   } else {
     paginationContainer.style.display = "flex";
   }
 
-  // Determine which page numbers to show
-  let startPage = Math.max(1, currentPage - 2);
-  let endPage = Math.min(totalPages, startPage + 4);
-
-  // Adjust if we're near the end
-  if (endPage - startPage < 4) {
-    startPage = Math.max(1, endPage - 4);
-  }
-
-  // Create page number links
-  for (let i = startPage; i <= endPage; i++) {
+  // 👇 This loop renders ALL page numbers (no 5-page limit)
+  for (let i = 1; i <= totalPages; i++) {
     const pageLink = document.createElement("a");
     pageLink.href = "#";
-    pageLink.className = `pagination_link pagination_number ${
-      i === currentPage ? "pagination_active" : ""
-    }`;
+    pageLink.className = `pagination_link pagination_number ${i === currentPage ? "pagination_active" : ""
+      }`;
     pageLink.textContent = i;
     pageLink.addEventListener("click", (e) => {
       e.preventDefault();
@@ -167,7 +151,7 @@ function renderPagination(totalPages) {
     paginationNumbers.appendChild(pageLink);
   }
 
-  // Update event listeners for prev/next buttons
+  // Prev/Next button functionality
   prevButton.onclick = (e) => {
     e.preventDefault();
     if (currentPage > 1) {
@@ -182,20 +166,10 @@ function renderPagination(totalPages) {
     }
   };
 
-  // Disable/enable back button based on current page
-  if (currentPage === 1) {
-    prevButton.classList.add("disabled");
-  } else {
-    prevButton.classList.remove("disabled");
-  }
-
-  // Disable/enable next button based on current page
-  if (currentPage === totalPages) {
-    nextButton.classList.add("disabled");
-  } else {
-    nextButton.classList.remove("disabled");
-  }
+  prevButton.classList.toggle("disabled", currentPage === 1);
+  nextButton.classList.toggle("disabled", currentPage === totalPages);
 }
+
 
 function goToPage(pageNumber) {
   currentPage = pageNumber;
