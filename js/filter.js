@@ -135,12 +135,22 @@ function renderPagination(totalPages) {
     paginationParent.style.display = "flex";
   }
 
-  // 👇 This loop renders ALL page numbers (no 5-page limit)
-  for (let i = 1; i <= totalPages; i++) {
+  // Calculate range: max 5 pages, current in the center when possible
+  let startPage = Math.max(1, currentPage - 2);
+  let endPage = Math.min(totalPages, currentPage + 2);
+
+  // Adjust range if near beginning or end
+  if (currentPage <= 2) {
+    endPage = Math.min(5, totalPages);
+  } else if (currentPage >= totalPages - 1) {
+    startPage = Math.max(1, totalPages - 4);
+  }
+
+  // Render pagination numbers in range
+  for (let i = startPage; i <= endPage; i++) {
     const pageLink = document.createElement("a");
     pageLink.href = "#";
-    pageLink.className = `pagination_link pagination_number ${i === currentPage ? "pagination_active" : ""
-      }`;
+    pageLink.className = `pagination_link pagination_number ${i === currentPage ? "pagination_active" : ""}`;
     pageLink.textContent = i;
     pageLink.addEventListener("click", (e) => {
       e.preventDefault();
@@ -167,6 +177,7 @@ function renderPagination(totalPages) {
   prevButton.classList.toggle("disabled", currentPage === 1);
   nextButton.classList.toggle("disabled", currentPage === totalPages);
 }
+
 
 
 function goToPage(pageNumber) {
