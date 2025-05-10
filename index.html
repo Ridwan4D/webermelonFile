@@ -70,12 +70,10 @@
                     </div>
                     <!-- categories start -->
                     <div>
-                        <p class="filter_title fw-medium category_title">Categories</p>
-                        <!-- subcategories start -->
                         <div class="subcategory_container">
                             <div class="profession_container">
                                 <div class="subcategory_top d-flex justify-content-between align-items-center">
-                                    <p class="subcateogry_title fw-medium mb-0">Profession</p>
+                                    <p class="filter_title fw-medium mb-0 category_title">Categories</p>
                                     <button id="professionToggleBtn"><img src="./image/minus.svg" alt="minus"
                                             id="toggleIcon"></button>
                                 </div>
@@ -110,17 +108,7 @@
                                                 class="check_btn">
                                             <label for="entrepreneur" class="filter_text fw-normal">Entrepreneur</label>
                                         </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="industry_container">
-                                <div class="subcategory_top d-flex justify-content-between align-items-center">
-                                    <p class="subcateogry_title fw-medium mb-0">Industry</p>
-                                    <button id="industryToggleBtn"><img src="./image/minus.svg" alt="minus"
-                                            id="industryToggleIcon"></button>
-                                </div>
-                                <div class="subcat_content" id="industryFilter">
-                                    <form action="" id="industryForm">
+                                        <!-- ============= =============== -->
                                         <div class="d-flex align-items-center mb-1 gap-2">
                                             <input type="checkbox" name="memberType" id="media" class="check_btn">
                                             <label for="media" class="filter_text fw-normal">Media</label>
@@ -155,6 +143,7 @@
                                     </form>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -206,7 +195,7 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="d-flex justify-content-between align-items-center mt-3 pt-1 pagination_parent">
+                    <div class="justify-content-between align-items-center mt-3 pt-1 pagination_parent">
                         <div class="pagination_info">Showing <span id="startRange">11</span> to <span
                                 id="endRange">20</span> of <span id="totalUsers">20</span> members
                         </div>

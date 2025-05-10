@@ -12,9 +12,7 @@ const memberTypeForm = document.getElementById("memberTypeForm");
 const professionCheckboxes = document.querySelectorAll(
   '#professionForm input[type="checkbox"]'
 );
-const industryCheckboxes = document.querySelectorAll(
-  '#industryForm input[type="checkbox"]'
-);
+const paginationParent = document.querySelector(".pagination_parent");
 const paginationContainer = document.querySelector(".pagination_container");
 
 // Pagination info elements
@@ -131,10 +129,10 @@ function renderPagination(totalPages) {
   paginationNumbers.innerHTML = "";
 
   if (totalPages <= 1) {
-    paginationContainer.style.display = "none";
+    paginationParent.style.display = "none";
     return;
   } else {
-    paginationContainer.style.display = "flex";
+    paginationParent.style.display = "flex";
   }
 
   // 👇 This loop renders ALL page numbers (no 5-page limit)
@@ -206,20 +204,6 @@ function applyFilters() {
       );
     });
   }
-
-  // Filter based on selected industries
-  if (normalizedSelectedIndustries.length > 0) {
-    filteredUsers = filteredUsers.filter((user) => {
-      const userIndustry = user.member_type.toLowerCase().split(",");
-      return normalizedSelectedIndustries.some((industry) =>
-        userIndustry.some((role) =>
-          role.replace(/\s+/g, "-").toLowerCase().includes(industry)
-        )
-      );
-    });
-  }
-
-  // Finally, render the filtered users with pagination
   renderUsers(getPaginatedUsers());
   setupPagination();
 }
@@ -252,16 +236,6 @@ professionCheckboxes.forEach((checkbox) => {
       .filter((cb) => cb.checked)
       .map((cb) => cb.id.toLowerCase());
     console.log("Selected Professions:", selectedProfessions); // Debugging line
-    applyFilters();
-  });
-});
-
-industryCheckboxes.forEach((checkbox) => {
-  checkbox.addEventListener("change", () => {
-    selectedIndustries = Array.from(industryCheckboxes)
-      .filter((cb) => cb.checked)
-      .map((cb) => cb.id.toLowerCase());
-    console.log("Selected Industries:", selectedIndustries); // Debugging line
     applyFilters();
   });
 });
