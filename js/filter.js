@@ -233,7 +233,7 @@ searchInput.addEventListener("input", () => {
       user.first_name.toLowerCase().includes(query) ||
       user.last_name.toLowerCase().includes(query) ||
       user.email.toLowerCase().includes(query) ||
-      user.phone?.toLowerCase().includes(query)
+      user.phone_number?.toLowerCase().includes(query)
     );
   });
 
