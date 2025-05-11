@@ -1,0 +1,154 @@
+.filter_text {
+    font-size: 16px;
+    line-height: 24px;
+    color: #404040;
+}
+
+
+.user_card {
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.user_img {
+    height: 40px !important;
+    width: 40px !important;
+    border-radius: 50% !important;
+}
+
+.user_email,
+.status_role,
+.infoText,
+.info_value {
+    font-size: 14px;
+    line-height: 20px;
+    color: #6A7282;
+}
+
+
+.user_email {
+    font-size: 11px
+}
+
+.badge_icon {
+    height: 12px;
+    width: 12px;
+}
+
+
+.badge_text {
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 500;
+    color: #966530;
+    white-space: nowrap;
+    padding-right: 8px;
+}
+
+
+.common_btn_style {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 10px 39px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    transition: all .5s ease;
+}
+
+
+
+@media (max-width: 1200px) {
+    .content_container {
+        flex-direction: column;
+    }
+
+    .filter_side {
+        width: 100%;
+    }
+
+    .user_card_side {
+        width: 100%;
+    }
+}
+
+
+
+@media(max-width: 1024px) {
+    .ct_left {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: start;
+    }
+
+    .user_email {
+        font-size: 12px;
+        /* width: 80%; */
+    }
+
+    .badge_text {
+        font-size: 10px;
+    }
+}
+
+
+
+
+@media (min-width:768px) and (max-width: 991px) {
+
+    .user_email,
+    .user_name {
+        font-size: 12px;
+    }
+
+    .badge_text {
+        font-size: 13px;
+    }
+
+    .common_btn_style {
+        font-size: 14px;
+        line-height: 18px;
+        padding: 10px 20px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        transition: all .5s ease;
+    }
+}
+
+
+@media(max-width: 768px) {
+    .content_container {
+        flex-direction: row
+    }
+}
+
+
+
+@media(max-width: 600px) {
+
+    .content_container {
+        flex-direction: column
+    }
+
+    .filter_side {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+@media(max-width: 425px) {
+    .ct_left {
+        flex-direction: column;
+        align-items: start;
+    }
+}
